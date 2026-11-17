@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="dbt Project">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="dbt Project" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest_fusion/dbt_project-latest-fusion.json" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="dbt_project.yml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

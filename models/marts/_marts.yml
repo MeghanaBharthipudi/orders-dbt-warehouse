@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+
+  - name: dim_cust
+    columns:
+      - name: customer_key
+        tests: [unique, not_null]
+      - name: customer_id
+        tests: [not_null]
+
+  - name: dim_status
+    columns:
+      - name: status_key
+        tests: [unique, not_null]
+      - name: status_name
+        tests:
+          - accepted_values:
+              arguments:
+              values: ['placed', 'shipped', 'delivered', 'cancelled', 'returned']
+
+  - name: fact_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: amount
+        tests: [not_null]
+      - name: customer_key
+        tests:
+          - relationships:
+              to: ref('dim_cust')
+              field: customer_key
+      - name: date_key
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: status_key
+        tests:
+          - relationships:
+              to: ref('dim_status')
+              field: status_key
